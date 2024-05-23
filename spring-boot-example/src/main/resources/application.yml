@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/customer
+    username: catalin
+  jpa:
+    hibernate:
+      dll-auto: create-drop
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+      show-sql: false
+
+  main:
+    web-application-type: servlet
