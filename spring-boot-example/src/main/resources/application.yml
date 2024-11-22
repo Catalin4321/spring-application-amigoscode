@@ -6,17 +6,30 @@ server:
 
 spring:
   datasource:
-    password: password
+    password: pass
     url: jdbc:postgresql://localhost:5432/customer
     username: catalin
   jpa:
     hibernate:
-      dll-auto: create-drop
+      ddl-auto: create-drop
       properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
           format_sql: true
-      show-sql: false
+          use_sql-comments: true
+          generate_statistic: true
+
+      show-sql: true
 
   main:
     web-application-type: servlet
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

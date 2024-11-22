@@ -4,7 +4,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: catalin
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: pass
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres
